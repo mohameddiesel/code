@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+using namespace std;
+
+
+void histogram(vector<int>grade){
+for(int i = 0; i < grade.size(); i++)
+{
+    int counter = 1;
+
+    int limit = grade.size() - 1;
+     sort(grade.begin(), grade.end());
+
+    while(i < limit  && grade[i] == grade[i+1])
+    {
+        counter ++;
+        i++;
+    }
+
+    cout << "the number of  "<< grade[i] << "'s  " << counter << std::endl;
+}
+}
+
+
+int main()
+{
+    int i=0;
+    int value;
+    vector<int> thegrades;
+
+
+    while(i>=0)
+    {
+        cout<<"Enter the grades  for the student: ";
+        cin>>value;
+        thegrades.push_back(value);
+
+
+        if((thegrades[i])==(-1))
+        {
+            break;
+
+        }
+        i++;
+
+
+    }
+      thegrades.pop_back();
+      histogram(thegrades);
+
+
+
+};
+
+
